@@ -1,25 +1,19 @@
 import sys
-import gzip
-import traceback
-import getopt
-from os import listdir
-from os.path import isfile, join
-from datetime import datetime
 
-import argparse
-import datetime
-import gzip
-import os
 import re
-import sys
 
 import fileinput
 from collections import namedtuple
 from colorama import init
+from colorama import Fore, Back, Style
 
+
+Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message']) # finish adding rest of fields. Check this, not sure
+
+LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>([\[\w+\]-]+)?) (?P<message>.*)")
 
 # def read_file ():
-#     # if myinputfile.endswith('.gz'):
+#     # if myinputfile.endswih('.gz'):
 #     #     with gzip.open(myinputfile, 'rb') as f:
 #     #         filecontent = f.readlines()
 #     # else:
@@ -34,14 +28,8 @@ from colorama import init
 # \[\w+\]
 
 def get_all_tokens(line):
-    #Fields = namedtuple('Fields', ['datetime', 'pid', 'loglevel', 'modulename', 'request']) # finish adding rest of fields. Check this, not sure
-    Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request']) # finish adding rest of fields. Check this, not sure
 
-    #LINE_RE = re.compile^(('?P<datetime>\d{4}-\d{2}-\d{2}')('?P<pid>\d{5}')('?P<loglevel>[A-Z]')('?P<modulename>[a-z\.]')('?P<request>\[*?\]')) # finish adding the regex's for the rest of the fields
-    #LINE_RE = re.compile(r'(?P<datetime>\d{4}-\d{2}-\d{2} \d\d:\d\d:\d\d\.\d\d\d)(?P<pid>\d+)') # finish adding the regex's for the rest of the fields
-    result = re.match(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>\[\-\])", line)
-    # print "line re", LINE_RE
-    # result = LINE_RE.search(line)
+    result = LINE_RE.search(line)
     if result:
         date = result.group('date')
         time = result.group('time')
@@ -49,9 +37,11 @@ def get_all_tokens(line):
         loglevel = result.group('loglevel')
         modulename = result.group('modulename')
         request = result.group('request')
+        message = result.group('message')
+
         # message = result.group('message')
 
-        tokens = Fields(date, time, pid, loglevel, modulename, request)
+        tokens = Fields(date, time, pid, loglevel, modulename, request, message)
         # tokens = Fields(datetime)
         # tokens = ''
     return tokens
@@ -70,15 +60,18 @@ def get_all_tokens(line):
 
 # maybe takes the tokens from the get_all_tokens() function and colors them. Using one of the color libaries. 
 # for this maybe have to make the named tuple global
-# def color_line(tokens_namedtuple):
-#     colored_tokens = []
-#     colored_tokens.append(Fore.RED + tokens_namedtuple.datetime)
-#     colored_tokens.append(Fore.GREEN + tokens_namedtuple.pid)
-#     colored_tokens.append(Fore.YELLOW + tokens_namedtuple.loglevel)
-#     colored_tokens.append(Fore.BLUE + tokens_namedtuple.modulename)
-#     colored_tokens.append(Fore.MAGENTA + tokens_namedtuple.request)
-#     colored_tokens.append(Fore.CYAN + tokens_namedtuple.message)
-#     return colored_tokens
+def color_line(tokens_namedtuple):
+    colored_tokens = ""
+    # print(Fore.RED + tokens_namedtuple.date)
+    colored_tokens = colored_tokens + (Fore.RED + tokens_namedtuple.date) + " "
+    colored_tokens = colored_tokens + (Fore.GREEN + tokens_namedtuple.time) + " "
+    colored_tokens = colored_tokens + (Fore.YELLOW + tokens_namedtuple.pid) + " "
+    colored_tokens = colored_tokens + (Fore.BLUE + tokens_namedtuple.loglevel)+ " "
+    colored_tokens = colored_tokens + (Fore.MAGENTA + tokens_namedtuple.modulename) + " "
+    colored_tokens = colored_tokens + (Fore.CYAN + tokens_namedtuple.request) + " " + Style.RESET_ALL
+    colored_tokens = colored_tokens + tokens_namedtuple.message
+
+    return colored_tokens
 
 
 
@@ -95,9 +88,15 @@ def get_all_tokens(line):
 
 
 def main():
-    test_line1 = "2016-03-07 23:08:02.956 26887 WARNING oslo_reports.guru_meditation_report [-] Guru mediation now registers SIGUSR1 and SIGUSR2 by default for backward compatibility. SIGUSR1 will no longer be registered in a future release, so please use SIGUSR2 to generate reports."
+    # test_line1 = "2016-03-07 23:08:02.956 26887 WARNING oslo_reports.guru_meditation_report [fasdf] Guru mediation now registers SIGUSR1 and SIGUSR2 by default for backward compatibility. SIGUSR1 will no longer be registered in a future release, so please use SIGUSR2 to generate reports."
+    test_line1 = "2016-03-07 23:08:02.956 26887 WARNING oslo_reports.guru_meditation_report [joain[-]wion] Guru mediation now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer be registered in a future release, so please use SIGUSR2 to generate reports."
 
-    print get_all_tokens(test_line1)
+    #tuplefields = Fields(date='2016-04-07', time='23:08:02.123', pid='26887', loglevel='WARNING', modulename='guru_meditation_report', request='[joain[-]wion]')
+    tuplefields = get_all_tokens(test_line1)
+    print color_line(tuplefields)
+    # print test_line1[tuplefields.request:]
+    print(Style.RESET_ALL)
+    # print get_all_tokens(test_line1)
     # lines = read_file()
 
     # process_lines(lines)
