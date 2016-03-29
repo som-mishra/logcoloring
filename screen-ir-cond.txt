@@ -1,0 +1,435 @@
+++ [[ -n '' ]]
+++ echo 27883
+++ setsid /usr/local/bin/ironic-conductor --config-file=/etc/ironic/ironic.conf
+++ exit 0
+2016-03-07 23:08:51.706 27883 DEBUG ironic.cmd.conductor [-] Configuration: main /opt/stack/old/ironic/ironic/cmd/conductor.py:43
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] ******************************************************************************** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2320
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] Configuration options gathered from: log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2321
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] command line args: ['--config-file=/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2322
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] config files: ['/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2323
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] ================================================================================ log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2324
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] bindir                         = /opt/stack/old/ironic/ironic/bin log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.707 27883 DEBUG ironic.cmd.conductor [-] config_dir                     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] config_file                    = ['/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] control_exchange               = ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] debug                          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] default_log_levels             = ['amqp=WARN', 'amqplib=WARN', 'qpid.messaging=INFO', 'oslo.messaging=INFO', 'sqlalchemy=WARN', 'keystoneclient=INFO', 'stevedore=INFO', 'eventlet.wsgi.server=WARN', 'iso8601=WARN', 'paramiko=WARN', 'requests=WARN', 'neutronclient=WARN', 'glanceclient=WARN', 'ironic.openstack.common=WARN', 'urllib3.connectionpool=WARN'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] enabled_drivers                = ['fake', 'pxe_ssh', 'pxe_ipmitool'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] fatal_exception_format_errors  = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.708 27883 DEBUG ironic.cmd.conductor [-] force_raw_images               = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] grub_config_template           = /opt/stack/old/ironic/ironic/common/grub_conf.template log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] hash_distribution_replicas     = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] hash_partition_exponent        = 5 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] host                           = localhost log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] instance_format                = [instance: %(uuid)s]  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] instance_uuid_format           = [instance: %(uuid)s]  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.709 27883 DEBUG ironic.cmd.conductor [-] isolinux_bin                   = /usr/lib/syslinux/isolinux.bin log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.710 27883 DEBUG ironic.cmd.conductor [-] isolinux_config_template       = /opt/stack/old/ironic/ironic/common/isolinux_config.template log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] log_config_append              = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] log_date_format                = %Y-%m-%d %H:%M:%S log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] log_dir                        = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] log_file                       = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] log_format                     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] logging_context_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user_identity)s] %(instance)s%(message)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.711 27883 DEBUG ironic.cmd.conductor [-] logging_debug_format_suffix    = %(funcName)s %(pathname)s:%(lineno)d log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] logging_default_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] logging_exception_prefix       = %(asctime)s.%(msecs)03d %(process)d ERROR %(name)s %(instance)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] logging_user_identity_format   = %(user)s %(tenant)s %(domain)s %(user_domain)s %(project_domain)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] memcached_servers              = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] my_ip                          = 10.0.2.15 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] notification_driver            = [] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] notification_topics            = ['notifications'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.712 27883 DEBUG ironic.cmd.conductor [-] periodic_interval              = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] publish_errors                 = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] pybasedir                      = /opt/stack/old/ironic/ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] rootwrap_config                = /etc/ironic/rootwrap.conf log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] rpc_backend                    = rabbit log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] run_external_periodic_tasks    = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] state_path                     = /var/lib/ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.713 27883 DEBUG ironic.cmd.conductor [-] syslog_log_facility            = LOG_USER log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] tempdir                        = /tmp log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] transport_url                  = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] use_stderr                     = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] use_syslog                     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] use_syslog_rfc_format          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] verbose                        = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] watch_log_file                 = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.714 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.amqp_auto_delete = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.amqp_durable_queues = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.fake_rabbit = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.heartbeat_rate = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.heartbeat_timeout_threshold = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_reconnect_delay = 1.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_reconnect_timeout = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.715 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_ssl_ca_certs =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.716 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_ssl_certfile =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.716 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_ssl_keyfile =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.716 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.kombu_ssl_version =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.716 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_ha_queues = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.716 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_host = localhost log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_hosts = ['localhost'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_login_method = AMQPLAIN log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_max_retries = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_password = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_port = 5672 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_retry_backoff = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_retry_interval = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.717 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_use_ssl = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_userid = stackrabbit log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rabbit_virtual_host = / log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.rpc_conn_pool_size = 30 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] oslo_messaging_rabbit.send_single_reply = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] conductor.api_url              = http://10.0.2.15:6385 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] conductor.check_provision_state_interval = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.718 27883 DEBUG ironic.cmd.conductor [-] conductor.clean_callback_timeout = 1800 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.clean_nodes          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.configdrive_swift_container = ironic_configdrive_container log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.configdrive_use_swift = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.deploy_callback_timeout = 600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.force_power_state_during_sync = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.heartbeat_interval   = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.heartbeat_timeout    = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.719 27883 DEBUG ironic.cmd.conductor [-] conductor.inspect_timeout      = 1800 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.node_locked_retry_attempts = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.node_locked_retry_interval = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.periodic_max_workers = 8 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.power_state_sync_max_retries = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.send_sensor_data     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.send_sensor_data_interval = 600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.720 27883 DEBUG ironic.cmd.conductor [-] conductor.send_sensor_data_types = ['ALL'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] conductor.sync_local_state_interval = 180 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] conductor.sync_power_state_interval = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] conductor.workers_pool_size    = 100 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] database.backend               = sqlalchemy log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] database.connection            = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] database.connection_debug      = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] database.connection_trace      = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.721 27883 DEBUG ironic.cmd.conductor [-] database.db_inc_retry_interval = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.db_max_retries        = 20 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.db_max_retry_interval = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.db_retry_interval     = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.idle_timeout          = 3600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.max_overflow          = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.max_pool_size         = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.722 27883 DEBUG ironic.cmd.conductor [-] database.max_retries           = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.min_pool_size         = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.mysql_sql_mode        = TRADITIONAL log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.pool_timeout          = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.retry_interval        = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.slave_connection      = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.sqlite_db             = oslo.sqlite log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.sqlite_synchronous    = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.723 27883 DEBUG ironic.cmd.conductor [-] database.use_db_reconnect      = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] swift.swift_max_retries        = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] keystone.region_name           = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] oslo_concurrency.disable_process_locking = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] oslo_concurrency.lock_path     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] dhcp.dhcp_provider             = neutron log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.admin_password = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.724 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.admin_tenant_name = service log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.admin_token = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.admin_user  = ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_admin_prefix =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_host   = 127.0.0.1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_port   = 35357 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_protocol = https log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_section = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.725 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_type   = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_uri    = http://127.0.0.1:5000/v2.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.auth_version = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.cache       = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.cafile      = /opt/stack/data/ca-bundle.pem log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.certfile    = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.check_revocations_for_cached = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.delay_auth_decision = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.726 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.enforce_token_bind = permissive log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.hash_algorithms = ['md5'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.http_connect_timeout = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.http_request_max_retries = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.identity_uri = http://127.0.0.1:35357 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.include_service_catalog = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.insecure    = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.keyfile     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.727 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_pool_conn_get_timeout = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_pool_dead_retry = 300 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_pool_maxsize = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_pool_socket_timeout = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_pool_unused_timeout = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_secret_key = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.728 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_security_strategy = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcache_use_advanced_pool = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.memcached_servers = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.region_name = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.revocation_cache_time = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.signing_dir = /var/cache/ironic/api log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] keystone_authtoken.token_cache_time = 300 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] oslo_versionedobjects.fatal_exception_format_errors = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.729 27883 DEBUG ironic.cmd.conductor [-] glance.auth_strategy           = keystone log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_api_insecure     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_api_servers      = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_host             = 10.0.2.15 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_num_retries      = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_port             = 9292 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] glance.glance_protocol         = http log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.730 27883 DEBUG ironic.cmd.conductor [-] ******************************************************************************** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2343
+2016-03-07 23:08:51.731 27883 DEBUG oslo_concurrency.lockutils [-] Acquired semaphore "singleton_lock" lock /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:212
+2016-03-07 23:08:51.731 27883 DEBUG oslo_concurrency.lockutils [-] Releasing semaphore "singleton_lock" lock /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:225
+2016-03-07 23:08:51.731 27883 DEBUG oslo_concurrency.lockutils [-] Acquired semaphore "singleton_lock" lock /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:212
+2016-03-07 23:08:51.731 27883 DEBUG oslo_concurrency.lockutils [-] Releasing semaphore "singleton_lock" lock /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:225
+2016-03-07 23:08:51.731 27883 DEBUG oslo_service.service [-] Full set of CONF: _wait_for_exit_or_signal /usr/local/lib/python2.7/dist-packages/oslo_service/service.py:269
+2016-03-07 23:08:51.731 27883 DEBUG oslo_service.service [-] ******************************************************************************** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2320
+2016-03-07 23:08:51.731 27883 DEBUG oslo_service.service [-] Configuration options gathered from: log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2321
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] command line args: ['--config-file=/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2322
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] config files: ['/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2323
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] ================================================================================ log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2324
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] backdoor_port                  = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] bindir                         = /opt/stack/old/ironic/ironic/bin log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] config_dir                     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.732 27883 DEBUG oslo_service.service [-] config_file                    = ['/etc/ironic/ironic.conf'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] control_exchange               = ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] debug                          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] default_log_levels             = ['amqp=WARN', 'amqplib=WARN', 'qpid.messaging=INFO', 'oslo.messaging=INFO', 'sqlalchemy=WARN', 'keystoneclient=INFO', 'stevedore=INFO', 'eventlet.wsgi.server=WARN', 'iso8601=WARN', 'paramiko=WARN', 'requests=WARN', 'neutronclient=WARN', 'glanceclient=WARN', 'ironic.openstack.common=WARN', 'urllib3.connectionpool=WARN'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] enabled_drivers                = ['fake', 'pxe_ssh', 'pxe_ipmitool'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] fatal_exception_format_errors  = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] force_raw_images               = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] grub_config_template           = /opt/stack/old/ironic/ironic/common/grub_conf.template log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.733 27883 DEBUG oslo_service.service [-] hash_distribution_replicas     = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] hash_partition_exponent        = 5 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] host                           = localhost log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] instance_format                = [instance: %(uuid)s]  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] instance_uuid_format           = [instance: %(uuid)s]  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] isolinux_bin                   = /usr/lib/syslinux/isolinux.bin log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] isolinux_config_template       = /opt/stack/old/ironic/ironic/common/isolinux_config.template log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] log_config_append              = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.734 27883 DEBUG oslo_service.service [-] log_date_format                = %Y-%m-%d %H:%M:%S log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] log_dir                        = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] log_file                       = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] log_format                     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] log_options                    = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] logging_context_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [%(request_id)s %(user_identity)s] %(instance)s%(message)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] logging_debug_format_suffix    = %(funcName)s %(pathname)s:%(lineno)d log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] logging_default_format_string  = %(asctime)s.%(msecs)03d %(process)d %(levelname)s %(name)s [-] %(instance)s%(message)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] logging_exception_prefix       = %(asctime)s.%(msecs)03d %(process)d ERROR %(name)s %(instance)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] logging_user_identity_format   = %(user)s %(tenant)s %(domain)s %(user_domain)s %(project_domain)s log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.735 27883 DEBUG oslo_service.service [-] memcached_servers              = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] my_ip                          = 10.0.2.15 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] notification_driver            = [] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] notification_topics            = ['notifications'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] periodic_interval              = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] publish_errors                 = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] pybasedir                      = /opt/stack/old/ironic/ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] rootwrap_config                = /etc/ironic/rootwrap.conf log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.736 27883 DEBUG oslo_service.service [-] rpc_backend                    = rabbit log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] run_external_periodic_tasks    = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] state_path                     = /var/lib/ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] syslog_log_facility            = LOG_USER log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] tempdir                        = /tmp log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] transport_url                  = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] use_stderr                     = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] use_syslog                     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] use_syslog_rfc_format          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.737 27883 DEBUG oslo_service.service [-] verbose                        = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] watch_log_file                 = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2333
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.amqp_auto_delete = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.amqp_durable_queues = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.fake_rabbit = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.heartbeat_rate = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.heartbeat_timeout_threshold = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_reconnect_delay = 1.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_reconnect_timeout = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_ssl_ca_certs =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_ssl_certfile =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_ssl_keyfile =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_ssl_version =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_ha_queues = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_host = localhost log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_hosts = ['localhost'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.739 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_login_method = AMQPLAIN log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_max_retries = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_password = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_port = 5672 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_retry_backoff = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_retry_interval = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_use_ssl = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.740 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_userid = stackrabbit log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rabbit_virtual_host = / log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.rpc_conn_pool_size = 30 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.send_single_reply = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] conductor.api_url              = http://10.0.2.15:6385 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] conductor.check_provision_state_interval = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] conductor.clean_callback_timeout = 1800 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] conductor.clean_nodes          = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.741 27883 DEBUG oslo_service.service [-] conductor.configdrive_swift_container = ironic_configdrive_container log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.configdrive_use_swift = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.deploy_callback_timeout = 600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.force_power_state_during_sync = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.heartbeat_interval   = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.heartbeat_timeout    = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.inspect_timeout      = 1800 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.node_locked_retry_attempts = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.742 27883 DEBUG oslo_service.service [-] conductor.node_locked_retry_interval = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.periodic_max_workers = 8 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.power_state_sync_max_retries = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.send_sensor_data     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.send_sensor_data_interval = 600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.send_sensor_data_types = ['ALL'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.sync_local_state_interval = 180 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.sync_power_state_interval = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] conductor.workers_pool_size    = 100 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.743 27883 DEBUG oslo_service.service [-] database.backend               = sqlalchemy log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.connection            = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.connection_debug      = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.connection_trace      = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.db_inc_retry_interval = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.db_max_retries        = 20 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.db_max_retry_interval = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.db_retry_interval     = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.744 27883 DEBUG oslo_service.service [-] database.idle_timeout          = 3600 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.max_overflow          = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.max_pool_size         = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.max_retries           = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.min_pool_size         = 1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.mysql_sql_mode        = TRADITIONAL log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.pool_timeout          = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.retry_interval        = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.745 27883 DEBUG oslo_service.service [-] database.slave_connection      = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] database.sqlite_db             = oslo.sqlite log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] database.sqlite_synchronous    = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] database.use_db_reconnect      = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] swift.swift_max_retries        = 2 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] keystone.region_name           = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] oslo_concurrency.disable_process_locking = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] oslo_concurrency.lock_path     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.746 27883 DEBUG oslo_service.service [-] dhcp.dhcp_provider             = neutron log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.admin_password = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.admin_tenant_name = service log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.admin_token = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.admin_user  = ironic log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_admin_prefix =  log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_host   = 127.0.0.1 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_port   = 35357 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_protocol = https log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.747 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_section = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_type   = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_uri    = http://127.0.0.1:5000/v2.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.auth_version = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.cache       = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.cafile      = /opt/stack/data/ca-bundle.pem log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.certfile    = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.check_revocations_for_cached = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.748 27883 DEBUG oslo_service.service [-] keystone_authtoken.delay_auth_decision = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.enforce_token_bind = permissive log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.hash_algorithms = ['md5'] log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.http_connect_timeout = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.http_request_max_retries = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.identity_uri = http://127.0.0.1:35357 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.include_service_catalog = True log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.insecure    = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.keyfile     = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.749 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_pool_conn_get_timeout = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_pool_dead_retry = 300 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_pool_maxsize = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_pool_socket_timeout = 3 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_pool_unused_timeout = 60 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_secret_key = **** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_security_strategy = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcache_use_advanced_pool = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.750 27883 DEBUG oslo_service.service [-] keystone_authtoken.memcached_servers = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] keystone_authtoken.region_name = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] keystone_authtoken.revocation_cache_time = 10 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] keystone_authtoken.signing_dir = /var/cache/ironic/api log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] keystone_authtoken.token_cache_time = 300 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] oslo_versionedobjects.fatal_exception_format_errors = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] glance.auth_strategy           = keystone log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] glance.glance_api_insecure     = False log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.751 27883 DEBUG oslo_service.service [-] glance.glance_api_servers      = None log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.752 27883 DEBUG oslo_service.service [-] glance.glance_host             = 10.0.2.15 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.752 27883 DEBUG oslo_service.service [-] glance.glance_num_retries      = 0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.752 27883 DEBUG oslo_service.service [-] glance.glance_port             = 9292 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.752 27883 DEBUG oslo_service.service [-] glance.glance_protocol         = http log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341
+2016-03-07 23:08:51.752 27883 DEBUG oslo_service.service [-] ******************************************************************************** log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2343
+2016-03-07 23:08:51.757 27883 DEBUG oslo_messaging._drivers.amqp [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Pool creating new connection create /usr/local/lib/python2.7/dist-packages/oslo_messaging/_drivers/amqp.py:103
+2016-03-07 23:08:51.759 27883 INFO oslo.messaging._drivers.impl_rabbit [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Connecting to AMQP server on localhost:5672
+2016-03-07 23:08:51.766 27883 INFO oslo.messaging._drivers.impl_rabbit [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Connected to AMQP server on 127.0.0.1:5672
+2016-03-07 23:08:51.777 27883 DEBUG oslo_concurrency.lockutils [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Lock "extension_manager" acquired by "ironic.common.driver_factory._init_extension_manager" :: waited 0.000s inner /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:270
+2016-03-07 23:08:51.846 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.847 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.847 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.847 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [{'priority': 0, 'interface': 'raid', 'step': 'create_configuration', 'abortable': False}, {'priority': 0, 'interface': 'raid', 'step': 'delete_configuration', 'abortable': False}] for interface raid __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.998 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.999 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.999 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:51.999 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.000 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [{'priority': 0, 'interface': 'raid', 'step': 'create_configuration', 'abortable': False}, {'priority': 0, 'interface': 'raid', 'step': 'delete_configuration', 'abortable': False}] for interface raid __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.001 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.001 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.002 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.007 27883 INFO ironic.drivers.modules.ipmitool [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Option timing is supported by ipmitool
+2016-03-07 23:08:52.012 27883 INFO ironic.drivers.modules.ipmitool [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Option single_bridge is supported by ipmitool
+2016-03-07 23:08:52.017 27883 INFO ironic.drivers.modules.ipmitool [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Option dual_bridge is supported by ipmitool
+2016-03-07 23:08:52.018 27883 DEBUG ironic.common.utils [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] checking directory: /tmp check_dir /opt/stack/old/ironic/ironic/common/utils.py:584
+2016-03-07 23:08:52.018 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.019 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.019 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.020 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.020 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.020 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface raid __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.022 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.023 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.023 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.023 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.023 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.023 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.028 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.029 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.029 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.029 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.030 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.030 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.031 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [{'priority': 0, 'interface': 'raid', 'step': 'create_configuration', 'abortable': False}, {'priority': 0, 'interface': 'raid', 'step': 'delete_configuration', 'abortable': False}] for interface raid __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.032 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.032 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.033 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.033 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.033 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.034 27883 INFO ironic.drivers.modules.inspector [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Inspection via ironic-inspector is disabled in configuration for driver PXEAndSSHDriver. To enable, change [inspector] enabled = True.
+2016-03-07 23:08:52.034 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.034 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.034 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.035 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [{'priority': 0, 'interface': 'raid', 'step': 'create_configuration', 'abortable': False}, {'priority': 0, 'interface': 'raid', 'step': 'delete_configuration', 'abortable': False}] for interface raid __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.035 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.036 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.036 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.036 27883 INFO ironic.drivers.modules.inspector [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Inspection via ironic-inspector is disabled in configuration for driver PXEAndIPMIToolDriver. To enable, change [inspector] enabled = True.
+2016-03-07 23:08:52.037 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface power __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.038 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface deploy __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.038 27883 DEBUG ironic.drivers.base [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Found clean steps [] for interface management __new__ /opt/stack/old/ironic/ironic/drivers/base.py:173
+2016-03-07 23:08:52.038 27883 INFO ironic.common.driver_factory [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Loaded the following drivers: ['fake', 'pxe_ssh', 'pxe_ipmitool']
+2016-03-07 23:08:52.039 27883 DEBUG oslo_concurrency.lockutils [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Lock "extension_manager" released by "ironic.common.driver_factory._init_extension_manager" :: held 0.262s inner /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:282
+2016-03-07 23:08:52.040 27883 DEBUG oslo_db.api [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Loading backend 'sqlalchemy' from 'ironic.db.sqlalchemy.api' _load_backend /usr/local/lib/python2.7/dist-packages/oslo_db/api.py:233
+2016-03-07 23:08:52.113 27883 DEBUG oslo_db.sqlalchemy.engines [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] MySQL server mode set to STRICT_TRANS_TABLES,STRICT_ALL_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,TRADITIONAL,NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION _check_effective_sql_mode /usr/local/lib/python2.7/dist-packages/oslo_db/sqlalchemy/engines.py:256
+2016-03-07 23:08:52.135 27883 DEBUG oslo_concurrency.lockutils [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Lock "conductor_worker_spawn" acquired by "ironic.conductor.manager._spawn_worker" :: waited 0.000s inner /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:270
+2016-03-07 23:08:52.135 27883 DEBUG oslo_concurrency.lockutils [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Lock "conductor_worker_spawn" released by "ironic.conductor.manager._spawn_worker" :: held 0.000s inner /usr/local/lib/python2.7/dist-packages/oslo_concurrency/lockutils.py:282
+2016-03-07 23:08:52.136 27883 INFO ironic.conductor.manager [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Successfully started conductor with hostname localhost.
+2016-03-07 23:08:52.136 27883 INFO ironic.common.service [req-209978be-3fe1-445d-ab64-7abeba867e5f admin - - - -] Created RPC server for service ironic.conductor_manager on host localhost.
+2016-03-07 23:09:51.706 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_cleanwait_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:09:51.711 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._sync_power_states run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:09:51.714 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploy_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:09:51.717 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploying_status run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:09:51.720 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_inspect_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:10:51.723 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_cleanwait_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:10:51.726 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._sync_power_states run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:10:51.728 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_inspect_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:10:52.709 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploy_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:10:53.707 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploying_status run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:51.706 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_inspect_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:51.709 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._sync_local_state run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:52.713 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._sync_power_states run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:53.706 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_cleanwait_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:53.710 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploy_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:11:55.706 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploying_status run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:12:52.709 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._sync_power_states run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:12:53.706 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploy_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:12:53.710 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_inspect_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:12:55.709 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_cleanwait_timeouts run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
+2016-03-07 23:12:55.713 27883 DEBUG oslo_service.periodic_task [-] Running periodic task ConductorManager._check_deploying_status run_periodic_tasks /usr/local/lib/python2.7/dist-packages/oslo_service/periodic_task.py:213
