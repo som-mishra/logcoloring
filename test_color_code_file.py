@@ -1,6 +1,7 @@
+#!/usr/bin/env python
 
-import unittest
 import re
+import unittest
 
 import color_code_file
 from collections import namedtuple
@@ -10,6 +11,7 @@ Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 
 
 class TestParseTestResults(unittest.TestCase):
 
+	# Request has [] and and [] nested, and also has other characters
 	def test_get_all_tokens_valid1(self):
 		test_line1 = "2016-03-07 23:08:02.956 26887 WARNING oslo_reports.guru_meditation_report [joain[-]wion] Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
@@ -19,7 +21,7 @@ class TestParseTestResults(unittest.TestCase):
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
 
-
+	# Changed the module name, removed the nested [] from module
 	def test_get_all_tokens_valid2(self):
 		test_line1 = "2016-03-07 23:08:02.956 26887 DEBUG oslo_reports.something.blah [joaiwion] Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
@@ -29,7 +31,7 @@ class TestParseTestResults(unittest.TestCase):
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
 
-
+	# There is nested [] and also nested [] in the message as well. Shouldn't make a difference. 
 	def test_get_all_tokens_valid3(self):
 		test_line1 = "2016-04-07 23:08:02.123 26887 WARNING guru_meditation_report [joain[-]wion] Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
@@ -39,11 +41,13 @@ class TestParseTestResults(unittest.TestCase):
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
 
+	# The request field is "empty". So it is [-], as in many lines
 	def test_get_all_tokens_valid4(self):
 		test_line1 = "2016-03-07 23:08:51.738 27883 DEBUG oslo_service.service [-] oslo_messaging_rabbit.kombu_reconnect_delay = 1.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341"
 		expectedtuple = Fields(date='2016-03-07', time='23:08:51.738', pid='27883', loglevel='DEBUG', modulename='oslo_service.service', request='[-]', message='oslo_messaging_rabbit.kombu_reconnect_delay = 1.0 log_opt_values /usr/local/lib/python2.7/dist-packages/oslo_config/cfg.py:2341')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
 
+	# Same test as test_get_all_tokens_valid2
 	def test_get_all_tokens_valid5(self):
 		test_line1 = "2016-04-07 23:08:02.123 26887 WARNING guru_meditation_report [joain[-]wion] Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
@@ -53,14 +57,72 @@ class TestParseTestResults(unittest.TestCase):
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
 
+	# Request is nested, but it there is no other text. 
 	def test_get_all_tokens_valid6(self):
-		test_line1 = "2016-04-07 23:08:02.123 26880970987 DEBUG guru_meditation_report [joain[-]] Guru mediation \
+		test_line1 = "2016-04-07 23:08:02.123 26880970987 DEBUG guru_meditation_report [[-]] Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
             be registered in a future release, so please use SIGUSR2 to generate reports."
-		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='26880970987', loglevel='DEBUG', modulename='guru_meditation_report', request='[joain[-]]', message='Guru mediation \
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='26880970987', loglevel='DEBUG', modulename='guru_meditation_report', request='[[-]]', message='Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
+
+
+
+
+
+
+
+
+
+
+
+
+	# No pid in line
+	def test_get_all_tokens_valid7(self):
+		test_line1 = "2016-04-07 23:08:02.123 DEBUG guru_meditation_report [-] Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports."
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid = '', loglevel='DEBUG', modulename='guru_meditation_report', request='[-]', message='Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports.')
+		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
+
+
+
+	# No pid and nested request field
+	def test_get_all_tokens_valid8(self):
+		test_line1 = "2016-04-07 23:08:02.123 DEBUG guru_meditation_report [[-]] Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports."
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='', loglevel='DEBUG', modulename='guru_meditation_report', request='[[-]]', message='Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports.')
+		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
+
+
+
+	# No pid, and nested request with other characters too
+	def test_get_all_tokens_valid9(self):
+		test_line1 = "2016-04-07 23:08:02.123 HELLO guru_meditation_report [oin[-]] Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports."
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='', loglevel='HELLO', modulename='guru_meditation_report', request='[oin[-]]', message='Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports.')
+		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
+
+
+	# No pid, Nested [] in request, and also nested [] in messsage portion. 
+	def test_get_all_tokens_valid10(self):
+		test_line1 = "2016-04-07 23:08:02.123 DEBUG guru_meditation_report [[-fasd]] Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports."
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='', loglevel='DEBUG', modulename='guru_meditation_report', request='[[-fasd]]', message='Guru mediation \
+            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            be registered in a future release, so please use SIGUSR2 to generate reports.')
+		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
+
 
 
 
