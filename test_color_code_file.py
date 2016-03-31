@@ -131,5 +131,46 @@ class TestParseTestResults(unittest.TestCase):
 
 
 
+
+
+	# Testing color_line with no pid
+	def test_color_line_valid1(self):
+		inputtuple = Fields(date='2034-02-07', time='23:08:02.123', pid='', loglevel='DEBUG', modulename='guru_meditation_report', request='[-]', message='Guru mediation \
+        now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+        be registered in a future release, so please use SIGUSR2 to generate reports.')
+		return color_code_file.color_line(inputtuple)
+
+
+	# With a 4 digit pid and a non-empty request
+	def test_color_line_valid2(self):
+		inputtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='1234', loglevel='DEBUG', modulename='guru_meditation_report', request='[-fasd]', message='Guru mediation \
+        now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+        be registered in a future release, so please use SIGUSR2 to generate reports.')
+		return color_code_file.color_line(inputtuple)
+
+	# Different log level and no pid
+	def test_color_line_valid3(self):
+		inputtuple = Fields(date='2016-04-09', time='23:08:02.123', pid='', loglevel='HELLO', modulename='guru_meditation_report', request='[[-fasd]]', message='Guru mediation \
+        now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+        be registered in a future release, so please use SIGUSR2 to generate reports.')
+		return color_code_file.color_line(inputtuple)
+
+
+	# Unusually large pid and nested request field
+	def test_color_line_valid4(self):
+		inputtuple = Fields(date='2124-11-12', time='23:08:02.123', pid='0997980790970', loglevel='DEBUG', modulename='guru_meditation_report', request='[[-]]', message='Guru mediation \
+        now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+        be registered in a future release, so please use SIGUSR2 to generate reports.')
+		return color_code_file.color_line(inputtuple)
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
 	unittest.main()
+	
+	# print test_color_line_valid1()

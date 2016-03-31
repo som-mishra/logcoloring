@@ -11,11 +11,11 @@ from collections import namedtuple
 from colorama import Fore, Back, Style
 
 
-Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message']) # finish adding rest of fields. Check this, not sure
+Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message'])
 
 LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>([\[\w+\]-]+)?) (?P<message>.*)")
 LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>([\[\w+\]-]+)?) (?P<message>.*)")
- 
+
 
 def read_file(inputfile):
     lines = []
@@ -36,13 +36,11 @@ def process_file(myfile):
     return result
 
 
-
 def process_all_files(allfiles):
     result = {}
     for f in allfiles:
         result[f] = process_file(f)
     return result
-
 
 
 def process_lines(lines):
@@ -53,8 +51,6 @@ def process_lines(lines):
         else:
             result = result + color_line(get_all_tokens(line)) + "\n"
     return result
-
-
 
 
 def get_all_tokens(line):
@@ -84,20 +80,17 @@ def get_all_tokens(line):
     return tokens
 
 
-
 def color_line(tokens_namedtuple):
     colored_tokens = ""
     colored_tokens = colored_tokens + (Fore.RED + tokens_namedtuple.date) + " "
     colored_tokens = colored_tokens + (Fore.GREEN + tokens_namedtuple.time) + " "
     colored_tokens = colored_tokens + (Fore.YELLOW + tokens_namedtuple.pid) + " "
-    colored_tokens = colored_tokens + (Fore.BLUE + tokens_namedtuple.loglevel)+ " "
+    colored_tokens = colored_tokens + (Fore.BLUE + tokens_namedtuple.loglevel) + " "
     colored_tokens = colored_tokens + (Fore.MAGENTA + tokens_namedtuple.modulename) + " "
     colored_tokens = colored_tokens + (Fore.CYAN + tokens_namedtuple.request) + " " + Style.RESET_ALL
     colored_tokens = colored_tokens + tokens_namedtuple.message
 
     return colored_tokens
-
-
 
 
 def parse_inputs():
@@ -110,10 +103,10 @@ def parse_inputs():
 
     args = parser.parse_args()
     # print args
-    # if (args.PATH is None and args.FILES is None):
-    #     print "Must provide either a path, files, or pipe input into the program. For example: $ cat log.txt | ./color_code_file.py"
-    #     sys.exit(1)
-    if (args.PATH is not None):      
+    if (args.PATH is None and args.FILES is None and sys.stdin.isatty() is True):
+        print "Must provide either a path, files, or pipe input into the program. For example: $ cat log.txt | ./color_code_file.py. Use -h for help"
+        sys.exit(1)
+    if (args.PATH is not None):
         if not os.path.exists(args.PATH):
             print ("Path:[%s] does not exist. Check your input." % args.PATH)
             sys.exit(1)
@@ -123,11 +116,7 @@ def parse_inputs():
             if not os.path.exists(f):
                 print ("File:[%s] does not exist. Check your input." % f)
                 sys.exit(1)
-    
     return args
-
-
-
 
 
 def main():
@@ -137,10 +126,8 @@ def main():
     if (args.PATH is None and args.FILES is None):
         lines = []
         filelines = sys.stdin
-        # print "filelines ", filelines
         for line in filelines:
             lines.append(line.rstrip())
-        # print "lines ", lines
         print process_lines(lines)
     else:
         files = []
@@ -156,18 +143,10 @@ def main():
     print(Style.RESET_ALL)
 
 
-
-
-
 if __name__ == '__main__':
     #Use 2.7 version of python
     ver = (2, 7)
     if sys.version_info[:2] != ver:
         print("ERROR: Use Python Version: 2.7")
         sys.exit()
-    
     main()
-
-
-
-
