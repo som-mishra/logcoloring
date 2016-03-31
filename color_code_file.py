@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 import argparse
+from collections import namedtuple
 import fileinput
 import os
 import re
 import sys
 
 from colorama import init
-from collections import namedtuple
 from colorama import Fore, Back, Style
 
 
