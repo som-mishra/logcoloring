@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 
+from collections import namedtuple
 import re
 import unittest
 
 import color_code_file
-from collections import namedtuple
 
 
 Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message'])
@@ -60,9 +60,9 @@ class TestParseTestResults(unittest.TestCase):
 	# Request is nested, but it there is no other text. 
 	def test_get_all_tokens_valid6(self):
 		test_line1 = "2016-04-07 23:08:02.123 26880970987 DEBUG guru_meditation_report [[-]] Guru mediation \
-            now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
+            now registers SIGUSR1 and SIGUSR2 by [req-a17d69b8-066c-4482-a865-4347872504af None None] default for backward compatibility. SIGUSR1 will no longer \
             be registered in a future release, so please use SIGUSR2 to generate reports."
-		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='26880970987', loglevel='DEBUG', modulename='guru_meditation_report', request='[[-]]', message='Guru mediation \
+		expectedtuple = Fields(date='2016-04-07', time='23:08:02.123', pid='26880970987', loglevel='DEBUG', modulename='guru_meditation_report', request='[req-a17d69b8-066c-4482-a865-4347872504af None None]', message='Guru mediation \
             now registers SIGUSR1 and SIGUSR2 by [-ga[]sdhj] default for backward compatibility. SIGUSR1 will no longer \
             be registered in a future release, so please use SIGUSR2 to generate reports.')
 		self.assertEqual(expectedtuple, color_code_file.get_all_tokens(test_line1))
