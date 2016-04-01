@@ -13,8 +13,8 @@ from colorama import Fore, Back, Style
 
 Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message'])
 
-LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>([\[\w+\]-]+)?) (?P<message>.*)")
-LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>([\[\w+\]-]+)?) (?P<message>.*)")
+LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>\[(.*?)\]) (?P<message>.*)")
+LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>\[(.*?)\]) (?P<message>.*)")
 
 
 def read_file(inputfile):
@@ -26,7 +26,10 @@ def read_file(inputfile):
 
 
 def get_all_input_files(mypath):
-    files = [f for f in os.listdir(mypath) if (os.path.isfile(os.path.join(mypath, f)) and f.endswith(('.txt', '.txt.gz')))]
+    files = []
+    for f in os.listdir(mypath):
+        if ((os.path.isfile(os.path.join(mypath, f))) and f.endswith(('.txt', '.txt.gz'))):
+            files.append(os.path.join(mypath, f))
     return files
 
 
@@ -97,25 +100,23 @@ def parse_inputs():
 
     parser = argparse.ArgumentParser(description="color_code_file.py")
 
-    parser.add_argument("-p", "--path", dest="PATH", help="Enter the full path to the location of the files that need to be colored. For ex $ ./color_code_file.py -p /home/smishra/colorlog/", required=False)
-    parser.add_argument("-f", "--files", dest="FILES", help="Enter one or that you want to be colored. Comma seperated, no spaces. For ex: $ ./color_code_file.py -f log.txt log2.txt ", required=False)
     parser.add_argument("-v", "--verbose", action="store_true", dest="VERBOSE", help="Verbose mode", default=False)
 
+    parser.add_argument('files', metavar='N', type=str, nargs='*', help='Enter files and/or directories that need to be colored. For ex: ./color.py /home/smishra/files/ log.txt log2.txt')
+
     args = parser.parse_args()
-    # print args
-    if (args.PATH is None and args.FILES is None and sys.stdin.isatty() is True):
-        print "Must provide either a path, files, or pipe input into the program. For example: $ cat log.txt | ./color_code_file.py. Use -h for help"
-        sys.exit(1)
-    if (args.PATH is not None):
-        if not os.path.exists(args.PATH):
-            print ("Path:[%s] does not exist. Check your input." % args.PATH)
-            sys.exit(1)
-    elif(args.FILES is not None):
-        args.FILES = args.FILES.split(',')
-        for f in args.FILES:
-            if not os.path.exists(f):
-                print ("File:[%s] does not exist. Check your input." % f)
-                sys.exit(1)
+
+    if (args.files is not None):
+        files = []
+        for value in args.files:
+            if os.path.isdir(value):
+                files.extend(get_all_input_files(value))
+            elif os.path.isfile(value):
+                files.append(value)
+            else:
+                sys.exit("Error: {!r} is not a file or directory".format(value))
+        args.files = files
+
     return args
 
 
@@ -123,20 +124,17 @@ def main():
     args = parse_inputs()
     if args.VERBOSE:
         print "args:", args
-    if (args.PATH is None and args.FILES is None):
+    if not args.files and sys.stdin.isatty() is True:
+        print "Must provide either a list of files and paths to what you want to color, or pipe input into the program. For example: $ cat log.txt | ./color_code_file.py. Use -h for help"
+        sys.exit(1)
+    if not args.files:
         lines = []
         filelines = sys.stdin
         for line in filelines:
             lines.append(line.rstrip())
         print process_lines(lines)
     else:
-        files = []
-        if args.PATH:
-            files = get_all_input_files(args.PATH)
-        elif args.FILES:
-            files = args.FILES
-
-        result = process_all_files(files)
+        result = process_all_files(args.files)
         for key in result:
             print "File=", key, "\n", result[key]
 
