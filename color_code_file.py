@@ -13,8 +13,8 @@ from colorama import Fore, Back, Style
 
 Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message'])
 
-LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>\[(.*?)\]) (?P<message>.*)")
-LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>[^\s]+) (?P<request>\[(.*?)\]) (?P<message>.*)")
+LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>\S+) (?P<request>\[(.*?)\]) (?P<message>.*)")
+LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>\S+) (?P<request>\[(.*?)\]) (?P<message>.*)")
 
 
 def read_file(inputfile):
