@@ -36,8 +36,8 @@ def read_file(inputfile):
 def get_all_input_files(mypath):
     files = []
     for f in os.listdir(mypath):
-        if ((os.path.isfile(os.path.join(mypath, f)))
-                and f.endswith(('.txt', '.txt.gz'))):
+        if ((os.path.isfile(os.path.join(mypath, f))) and
+                f.endswith(('.txt', '.txt.gz'))):
             files.append(os.path.join(mypath, f))
     return files
 
@@ -164,7 +164,7 @@ def main():
 
 
 if __name__ == '__main__':
-    #Use 2.7 version of python
+    # Use 2.7 version of python
     ver = (2, 7)
     if sys.version_info[:2] != ver:
         print("ERROR: Use Python Version: 2.7")
