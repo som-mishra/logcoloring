@@ -11,10 +11,18 @@ from colorama import init
 from colorama import Fore, Back, Style
 
 
-Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename', 'request', 'message'])
+Fields = namedtuple('Fields', ['date', 'time', 'pid', 'loglevel', 'modulename',
+                    'request', 'message'])
 
-LINE_RE = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>\S+) (?P<request>\[(.*?)\]) (?P<message>.*)")
-LINE_RE_NOPID = re.compile(r"(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) (?P<loglevel>[A-Z]+) (?P<modulename>\S+) (?P<request>\[(.*?)\]) (?P<message>.*)")
+LINE_RE = re.compile(
+    r'(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) '
+    r'(?P<pid>\d+) (?P<loglevel>[A-Z]+) (?P<modulename>\S+) '
+    r'(?P<request>\[(.*?)\]) (?P<message>.*)')
+
+LINE_RE_NOPID = re.compile(
+    r'(?P<date>\d{4}-\d{2}-\d{2}) (?P<time>\d\d:\d\d:\d\d\.\d\d\d) '
+    r'(?P<loglevel>[A-Z]+) (?P<modulename>\S+) (?P<request>\[(.*?)\]) '
+    r'(?P<message>.*)')
 
 
 def read_file(inputfile):
@@ -28,7 +36,8 @@ def read_file(inputfile):
 def get_all_input_files(mypath):
     files = []
     for f in os.listdir(mypath):
-        if ((os.path.isfile(os.path.join(mypath, f))) and f.endswith(('.txt', '.txt.gz'))):
+        if ((os.path.isfile(os.path.join(mypath, f)))
+                and f.endswith(('.txt', '.txt.gz'))):
             files.append(os.path.join(mypath, f))
     return files
 
@@ -85,12 +94,18 @@ def get_all_tokens(line):
 
 def color_line(tokens_namedtuple):
     colored_tokens = ""
-    colored_tokens = colored_tokens + (Fore.RED + tokens_namedtuple.date) + " "
-    colored_tokens = colored_tokens + (Fore.GREEN + tokens_namedtuple.time) + " "
-    colored_tokens = colored_tokens + (Fore.YELLOW + tokens_namedtuple.pid) + " "
-    colored_tokens = colored_tokens + (Fore.BLUE + tokens_namedtuple.loglevel) + " "
-    colored_tokens = colored_tokens + (Fore.MAGENTA + tokens_namedtuple.modulename) + " "
-    colored_tokens = colored_tokens + (Fore.CYAN + tokens_namedtuple.request) + " " + Style.RESET_ALL
+    colored_tokens = colored_tokens + \
+        (Fore.RED + tokens_namedtuple.date) + " "
+    colored_tokens = colored_tokens + \
+        (Fore.GREEN + tokens_namedtuple.time) + " "
+    colored_tokens = colored_tokens + \
+        (Fore.YELLOW + tokens_namedtuple.pid) + " "
+    colored_tokens = colored_tokens + \
+        (Fore.BLUE + tokens_namedtuple.loglevel) + " "
+    colored_tokens = colored_tokens + \
+        (Fore.MAGENTA + tokens_namedtuple.modulename) + " "
+    colored_tokens = colored_tokens + \
+        (Fore.CYAN + tokens_namedtuple.request) + " " + Style.RESET_ALL
     colored_tokens = colored_tokens + tokens_namedtuple.message
 
     return colored_tokens
@@ -100,9 +115,13 @@ def parse_inputs():
 
     parser = argparse.ArgumentParser(description="color_code_file.py")
 
-    parser.add_argument("-v", "--verbose", action="store_true", dest="VERBOSE", help="Verbose mode", default=False)
+    parser.add_argument("-v", "--verbose", action="store_true", dest="VERBOSE",
+                        help="Verbose mode", default=False)
 
-    parser.add_argument('files', metavar='N', type=str, nargs='*', help='Enter files and/or directories that need to be colored. For ex: ./color.py /home/smishra/files/ log.txt log2.txt')
+    parser.add_argument('files', metavar='N', type=str, nargs='*',
+                        help='Enter files and/or directories that need to \
+                        be colored. For ex: ./color.py /home/smishra/files/\
+                        log.txt log2.txt')
 
     args = parser.parse_args()
 
@@ -114,7 +133,8 @@ def parse_inputs():
             elif os.path.isfile(value):
                 files.append(value)
             else:
-                sys.exit("Error: {!r} is not a file or directory".format(value))
+                sys.exit("Error: {!r} is not a file or directory"
+                         .format(value))
         args.files = files
 
     return args
@@ -125,7 +145,9 @@ def main():
     if args.VERBOSE:
         print "args:", args
     if not args.files and sys.stdin.isatty() is True:
-        print "Must provide either a list of files and paths to what you want to color, or pipe input into the program. For example: $ cat log.txt | ./color_code_file.py. Use -h for help"
+        print "Must provide either a list of files and paths to what you \
+        want to color, or pipe input into the program. For example: \
+        $ cat log.txt | ./color_code_file.py. Use -h for help"
         sys.exit(1)
     if not args.files:
         lines = []
